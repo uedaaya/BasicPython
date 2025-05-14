@@ -1,25 +1,23 @@
-a = 10
-b = 20
+import random
 
-# TODO
-while b != 0:
-    a, b = b, a % b
-print(a)
-a = 14
-b = 91
+def euclid(a,b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+    if a % b == 1:
+        return False
+    print("tagainiso")
 
-# TODO
-while b != 0:
-    a, b = b, a % b
-print(a)
-a = 91
-b = 14
+print(euclid(10,20))
+print(euclid(14,91))
+print(euclid(91,14))
 
-# TODO
-while b != 0:
-    a, b = b, a % b
-print(a)
+count = 0
+for a in range(100000):
+    a = random.randint(1,10001)
+for b in range(100000):
+    b = random.randint(1,10001)
+    if euclid(a, b) == 1:
+        count += 1
 
-
-
-    
+print(count/100000)
